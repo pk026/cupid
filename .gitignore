@@ -1,0 +1,8 @@
+venv
+*.pyc
+*/__pycache__
+models/__pycache__/
+app/.env
+.vscode/
+.coverage
+.DS_Store
