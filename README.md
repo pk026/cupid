@@ -9,7 +9,7 @@ https://docs.google.com/document/d/1__2f3CkTv9IFDorpvQkGFaIGBqIXfPQF/edit
 ## Project Structure
     cupid/
     ├── models/
-    │ ├── init.py
+    │ ├── __init__.py
     │ ├── song.py
     │ ├── user.py
     │ └── library.py

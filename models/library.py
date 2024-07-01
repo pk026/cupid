@@ -38,7 +38,9 @@ class MusicLibrary:
         
         for song_name, song in self.songs.items():
             if song not in user_playlist:
-                max_similarity_index = max(calculate_similarity_index(song, playlist_song) for playlist_song in user.playlist)
+                max_similarity_index = 0
+                if user.playlist:
+                    max_similarity_index = max(calculate_similarity_index(song, playlist_song) for playlist_song in user.playlist)
                 friend_similarity_index = calculate_friend_similarity_index(song, user)
                 recommendations.append((song, max_similarity_index, friend_similarity_index))
 

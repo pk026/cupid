@@ -44,8 +44,31 @@ def main():
     library.add_friend("User1", "User3")
 
     # Show recommendations
-    recommendations = library.recommend_songs("User1")
-    print("Recommendations for User1:", recommendations)
+    def test_recommend_songs_for_user1():
+        print("<<<<<<<<<<<<<   test_recommend_songs_for_user1 \n")
+        recommendations = library.recommend_songs("User1")
+        expected_recommendations = ["Song4", "Song5", "Song3"]
+        print(f"recommendations: {recommendations}, \nexpected_recommendations: {expected_recommendations}")
+
+    def test_recommend_songs_for_user_with_empty_playlist():
+        print("\n <<<<<<<<<<<<< test_recommend_songs_for_user_with_empty_playlist \n")
+        user4 = User("User4")
+        library.add_user(user4)
+        recommendations = library.recommend_songs("User4")
+        print(f"recommendations: recommendations, \nexpected_recommendations: []")
+
+    def test_recommend_songs_for_user_with_no_friends():
+        print("\n <<<<<<<<<<<<<< test_recommend_songs_for_user_with_no_friends \n")
+        user5 = User("User5")
+        library.add_user(user5)
+        user5.add_song_to_playlist(song1)
+        recommendations = library.recommend_songs("User5")
+        expected_recommendations = ["Song4", "Song2", "Song3", "Song5"]
+        print(f"recommendations: {recommendations}, \nexpected_recommendations: {expected_recommendations}")
+
+    test_recommend_songs_for_user1()
+    test_recommend_songs_for_user_with_empty_playlist()
+    test_recommend_songs_for_user_with_no_friends()
 
 if __name__ == "__main__":
     main()
