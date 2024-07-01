@@ -17,10 +17,15 @@ class MusicLibrary:
 
     def add_friend(self, user_name, friend_name):
         user = self.users.get(user_name)
+        if not user:
+            print(f"username: {user_name} does not exists: raise a value error in prodction application")
         friend = self.users.get(friend_name)
+        if not friend:
+            print(f"username: {friend_name} does not exists: raise a value error in prodction application")
         if user and friend:
             user.add_friend(friend)
             friend.add_friend(user)
+
 
     def get_song_by_name(self, song_name):
         return self.songs.get(song_name)
@@ -31,6 +36,7 @@ class MusicLibrary:
     def recommend_songs(self, user_name):
         user = self.get_user_by_name(user_name)
         if not user:
+            print(f" user_name: {user_name} does not exists, raise value error in prodction application")
             return []
 
         recommendations = []

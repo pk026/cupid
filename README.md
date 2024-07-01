@@ -1,4 +1,4 @@
-# Cupid: Problem stmt:
+# Cupid: Problem statement:
 Music Recommendation
 
 https://docs.google.com/document/d/1__2f3CkTv9IFDorpvQkGFaIGBqIXfPQF/edit

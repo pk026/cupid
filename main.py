@@ -66,9 +66,24 @@ def main():
         expected_recommendations = ["Song4", "Song2", "Song3", "Song5"]
         print(f"recommendations: {recommendations}, \nexpected_recommendations: {expected_recommendations}")
 
+    def test_add_friend_non_existent_user():
+        print("\n <<<<<<<<<<<<<<<<<< test_add_friend_non_existent_user")
+        library.add_friend("NonExistentUser", "User2")
+
+    def test_add_friend_non_existent_friend():
+        print("\n <<<<<<<<<<<<<<<<<<< test_add_friend_non_existent_friend")
+        library.add_friend("User1", "NonExistentFriend")
+
+    def test_recommend_songs_for_non_existent_user():
+        print("\n <<<<<<<<<<<<<<<<<< test_recommend_songs_for_non_existent_user")
+        library.recommend_songs("NonExistentUser")
+
     test_recommend_songs_for_user1()
     test_recommend_songs_for_user_with_empty_playlist()
     test_recommend_songs_for_user_with_no_friends()
+    test_add_friend_non_existent_user()
+    test_add_friend_non_existent_friend()
+    test_recommend_songs_for_non_existent_user()
 
 if __name__ == "__main__":
     main()
